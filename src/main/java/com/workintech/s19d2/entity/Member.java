@@ -5,14 +5,14 @@ import lombok.AllArgsConstructor;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Data
@@ -33,7 +33,7 @@ public class Member implements UserDetails {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "member_roles", schema = "fsweb",
+            name = "member_roles", schema = "bank",
             joinColumns ={ @JoinColumn(name = "member_id")},
             inverseJoinColumns ={ @JoinColumn(name = "role_id")}
     )
