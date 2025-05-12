@@ -20,6 +20,6 @@ public class AuthController {
     @PostMapping("/register")
     public RegisterResponse register(@RequestBody RegistrationMember registrationMember){
        Member createdMember = authenticationService.register(registrationMember.email(), registrationMember.password());
-       return new RegisterResponse(createdMember.getEmail() , "succeed");
+       return new RegisterResponse(createdMember.getEmail() , "kayıt başarılı bir şekilde gerçekleşti.");
     }
 }
